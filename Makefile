@@ -45,6 +45,17 @@ travis-deploy: release
 clean:
 	@echo "Cleaning the build..."
 
+run-client:
+	@echo "Running the client..."
+	@cd templates/
+	@yarn start:client 
+
+run-server:
+	@echo "starting server..." 
+	@git submodule update
+	@./templates/server/Forge-java-demo/gradlew bootRun -p ./templates/server/Forge-java-demo/
+
+
 watch:
 	@make build
 	@echo "Watching templates and slides changes..."

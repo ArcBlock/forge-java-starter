@@ -2,6 +2,8 @@ TOP_DIR=.
 README=$(TOP_DIR)/README.md
 
 VERSION=$(strip $(shell cat version))
+FORGE_HTTP_PORT=8210
+FORGE_TCP_PORT=8210
 
 build:
 	@echo "Building the software..."
@@ -52,8 +54,9 @@ run-client:
 
 run-server:
 	@echo "starting server..." 
+	@cd templates/server
 	@git submodule update
-	@./templates/server/Forge-java-demo/gradlew bootRun -p ./templates/server/Forge-java-demo/
+	@./templates/server/Forge-java-demo/gradlew bootRun -p ./templates/server/Forge-java-demo/  -Pargs=--forge.http.port=$(FORGE_HTTP_PORT),--forge.tcp.port=$(FORGE_TCP_PORT)
 
 
 watch:

@@ -46,10 +46,6 @@ travis-deploy: release
 clean:
 	@echo "Cleaning the build..."
 
-run-client:
-	@echo "Running the client..."
-	@cd templates/
-	@yarn start:client 
 
 run-server:
 	@echo "starting server..." 
@@ -68,5 +64,6 @@ run:
 
 
 include .makefiles/*.mk
+include templates/Makefile
 
 .PHONY: build init travis-init install dep pre-build post-build all test doc precommit travis clean watch run bump-version create-pr

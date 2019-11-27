@@ -1,0 +1,44 @@
+{
+  "name": "forge-java-starter",
+  "version": "0.0.1",
+  "main": "starter.config.js",
+  "author": "wangshijun <shijun@arcblock.io> https://github.com/wangshijun",
+  "keywords": [
+    "arcblock",
+    "forge",
+    "starter",
+    "springboot",
+    "react",
+    "javascript"
+  ],
+  "homepage": "https://github.com/arcblock/forge-java-starter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcblock/forge-java-starter"
+  },
+  "bugs": {
+    "email": "shijun@arcblock.io"
+  },
+  "dependencies": {
+    "@arcblock/forge-wallet": "^0.35.2",
+    "@arcblock/graphql-client": "^0.37.2",
+    "@arcblock/mcrypto": "^0.35.1",
+    "chalk": "^2.4.2",
+    "child_process": "^1.0.2",
+    "inquirer": "^7.0.0",
+    "inquirer-autocomplete-prompt": "^1.0.1",
+    "ip": "^1.1.5",
+    "lodash": "^4.17.15",
+    "shelljs": "^0.8.3"
+  },
+  "scripts": {
+    "test": "echo \"no test specified\""
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@hutson/set-npm-auth-token-for-ci": "^4.0.3"
+  }
+}

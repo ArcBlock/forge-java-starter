@@ -1,0 +1,28 @@
+{
+  "name": "forge-python-starter",
+  "description": "A dApp starter that integrates forge-java-sdk and create-react-app and works with ABT Wallet",
+  "group": "starter",
+  "logo": "logo.jpg",
+  "provider": "official",
+  "color": "primary",
+  "type": "starter",
+  "version": "0.0.1",
+  "author": "polunzh <zhenqiang@arcblock.io> https://github.com/polunzh",
+  "keywords": [
+    "arcblock",
+    "forge",
+    "starter",
+    "springboot",
+    "react",
+    "javascript"
+  ],
+  "templates": "templates",
+  "install-scripts": {
+    "install-dependencies": "yarn install"
+  },
+  "hooks": {
+    "configure": "node scripts/index.js",
+    "post-copy": "git init && git submodule init &&git submodule update && yarn install",
+    "on-complete": "node scripts/on-complete.js"
+  }
+}

@@ -46,12 +46,16 @@ travis-deploy: release
 clean:
 	@echo "Cleaning the build..."
 
+run-client:
+	@echo "Running the client..."
+	@cd templates && yarn start:client
+
 
 run-server:
 	@echo "starting server..." 
 	@git submodule init
-	@git submodule update
-	@./templates/server/gradlew bootRun -p ./templates/server/ -Pargs=--forge.http.port=$(FORGE_HTTP_PORT),--forge.tcp.port=$(FORGE_TCP_PORT)
+	@git submodule update --remote
+	@./templates/server/gradlew bootRun -p ./templates/server/
 
 
 watch:
@@ -64,6 +68,6 @@ run:
 
 
 include .makefiles/*.mk
-include templates/Makefile
+
 
 .PHONY: build init travis-init install dep pre-build post-build all test doc precommit travis clean watch run bump-version create-pr

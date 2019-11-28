@@ -14,7 +14,7 @@ get http port and tcp port
 
 than run
 ```
-FORGE_HTTP_PORT=8210 FORGE_TCP_PORT=28210 make run-server
+make run-server
 make run-client
 ```
 Then， use AbtWallet app to scan 

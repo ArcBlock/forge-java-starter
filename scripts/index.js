@@ -16,7 +16,7 @@ async function getConfigs() {
     appDescription:
       'Starter dApp built on springboot that runs on forge powered blockchain',
     chainHost: 'http://localhost:8210/api',
-    postgreUri: 'postgresql://localhost:5432/postgres',
+    postgreUri: 'jdbc:postgresql://localhost:5432/postgres',
     appPort: 3000,
     serverPort: 9090,
     grpcPort: 28210,

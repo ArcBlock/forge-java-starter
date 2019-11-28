@@ -1,11 +1,10 @@
-# Forge Python Starter
+# Forge Java/Kotlin Starter
 
 ## Requirements
 
 - Build tools: `brew install automake libtool pkg-config libffi gmp openssl`
 - Node.js >= v10.x
-- Python 3.x - 3.6
-- Pip3
+- Java 8+
 - A running Blockchain node using [Forge-cli](https://docs.arcblock.io/forge/latest/tools/forge_cli.html)
 - npm or yarn
 
@@ -23,14 +22,6 @@ forge start
 
 Run `make init` to initialize the repository with required front-end libraries.
 
-### Python installation
-
-It's recommended that you start a fresh python environment for this project to avoid dependencies conflict, you can run `make create-env` to create one with all required dependencies installed.
-
-If you prefer to install python dependencies in your current environment, you can run `make install`. This will install required python dependencies.
-
-```bash
-make declare
 ```
 
 ## Usage

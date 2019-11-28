@@ -6,11 +6,21 @@ On the other hand, having these libraries and frameworks makes our life easier b
 
 You can get your own blockchain up and running within minutes with [forge-cli](https://github.com/ArcBlock/forge-cli), but how to connect your application with forge-powered chains through [forge-sdk](https://github.com/ArcBlock/forge-js)? How to get your application communication to ABT Wallet users?
 
-`forge-python-starter` is here to help! **`forge-python-starter` is the go to solution if you want to build applications with Python and [react](https://reactjs.org) that runs on forge powered chains.**
+`forge-Java-starter` is here to help! **`forge-python-starter` is the go to solution if you want to build applications with Python and [react](https://reactjs
+.org) that runs on forge powered chains.**
 
 ## What's Included?
 
-`forge-python-starter` is a typical full-stack javascript dApp template that have [forge-sdk](https://npmjs.org/package/@arcblock/forge-sdk) integrated, it consists of 2 core parts:
+`Forge-Java-starter` is a typical full-stack javascript dApp template that have [forge-sdk](https://npmjs.org/package/@arcblock/forge-sdk) integrated, it
+consists of 2 core parts:
+
+### Requirements
+
+- Build tools: `brew install automake libtool pkg-config libffi gmp openssl`
+- Node.js >= v10.x
+- Java 8+
+- A running Blockchain node using [Forge-cli](https://docs.arcblock.io/forge/latest/tools/forge_cli.html)
+- npm or yarn
 
 ### Frontend Part
 
@@ -27,28 +37,11 @@ Besides, to make the dApp works along with the [ABT Wallet](https://abtwallet.io
 
 ## Use cases?
 
-`forge-python-starter` can be start point for any forge powered dapp, you can built many blockchain powered apps, such as:
+`Forge-Java-starter` can be start point for any forge powered dapp, you can built many blockchain powered apps, such as:
 
 - Online store that sells digital assets and accept ABT as payments
 - Online community application that authentication users through ABT Wallet
 - Admin console for internal use that are protected by ABT Wallet
-
-## Requirements?
-
-Here are the knowledge requirements to get you up to speed when using this starter blocklet:
-
-- Basic Python coding experience
-- Basic react coding experience
-- Basic knowledge of mongodb
-
-And to get the starter blocklet up and running on first try, you should:
-
-- A handy command line terminal
-- Install latest version of forge-cli: `npm install -g @arcblock/forge-cli`
-- Spin up a forge-powered chain with forge-cli
-- Have a running [mongodb](https://mongodb.org) instance that the dApp can connects to
-
-Besides, you need to have ABT Wallet installed to try out the application after bootstrapping.
 
 ## LICENSE
 

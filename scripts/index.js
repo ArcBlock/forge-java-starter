@@ -79,7 +79,7 @@ async function getConfigs() {
       message: 'Java server port:',
       default: defaults.serverPort,
       validate: input => {
-        if (!input) return 'Python server port should not be empty';
+        if (!input) return 'server port should not be empty';
         return true;
       },
     },

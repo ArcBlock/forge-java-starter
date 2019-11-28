@@ -26,7 +26,7 @@ Run `make init` to initialize the repository with required front-end libraries.
 
 ## Usage
 
-Start python server on 5000. If you ran `make create-env` before, run `source /usr/local/bin/virtualenvwrapper.sh;workon forge-env;` before you run below command:
+Start spring server on 9090. run below command:
 
 ```bash
 make run-server

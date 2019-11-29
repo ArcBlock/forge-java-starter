@@ -5,7 +5,7 @@ node_js:
 install: false
 branches:
   only:
-  - feat-frontend
+  - master
 script: make travis
 deploy:
 - provider: script

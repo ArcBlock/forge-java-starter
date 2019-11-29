@@ -1,5 +1,5 @@
 {
-  "name": "forge-python-starter",
+  "name": "forge-java-starter",
   "description": "A dApp starter that integrates forge-java-sdk and create-react-app and works with ABT Wallet",
   "group": "starter",
   "logo": "logo.jpg",

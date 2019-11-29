@@ -6,7 +6,7 @@ On the other hand, having these libraries and frameworks makes our life easier b
 
 You can get your own blockchain up and running within minutes with [forge-cli](https://github.com/ArcBlock/forge-cli), but how to connect your application with forge-powered chains through [forge-sdk](https://github.com/ArcBlock/forge-js)? How to get your application communication to ABT Wallet users?
 
-`forge-Java-starter` is here to help! **`forge-python-starter` is the go to solution if you want to build applications with Python and [react](https://reactjs
+`forge-java-starter` is here to help! **`forge-java-starter` is the go to solution if you want to build applications with java and [react](https://reactjs
 .org) that runs on forge powered chains.**
 
 ## What's Included?

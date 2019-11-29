@@ -10,18 +10,6 @@ async function fetchSession() {
       removeToken();
     }
 
-    data.token = {
-      decimal: 18,
-      description: "My token MYT",
-      icon: "",
-      inflationRate: 0,
-      initialSupply: "7500000000",
-      name: "MyToken",
-      symbol: "MYT",
-      totalSupply: "7500000000",
-      unit: "myt"
-    };
-
     return data;
   } catch (err) {
     removeToken();

@@ -1,5 +1,5 @@
-git config --local user.name "wangshijun"
-git config --local user.email "wangshijun2010@gmail.com"
+git config --local user.name "huangshan"
+git config --local user.email "shan@arcblock.io"
 
 git remote remove origin
 git remote add origin "https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG.git"
@@ -13,4 +13,4 @@ DEBUG=* node tools/setup-ci.js
 npm publish
 
 # trigger cnpm sync
-curl -X PUT https://npm.taobao.org/sync/forge-python-starter?sync_upstream=true
+curl -X PUT https://npm.taobao.org/sync/forge-java-starter?sync_upstream=true

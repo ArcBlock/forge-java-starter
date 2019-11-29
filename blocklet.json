@@ -6,8 +6,8 @@
   "provider": "official",
   "color": "primary",
   "type": "starter",
-  "version": "0.0.1",
-  "author": "polunzh <zhenqiang@arcblock.io> https://github.com/polunzh",
+  "version": "0.2.0",
+  "author": "huangshan <shan@arcblock.io> https://github.com/PaperHS",
   "keywords": [
     "arcblock",
     "forge",

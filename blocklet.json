@@ -18,11 +18,11 @@
   ],
   "templates": "templates",
   "install-scripts": {
-    "install-dependencies": "yarn install"
+    "install-dependencies": "git init & git submodule add  https://github.com/arcblock/Forge-java-demo.git ./templates/server/ && git submodule init && git submodule update && yarn install"
   },
   "hooks": {
     "configure": "node scripts/index.js",
-    "post-copy": "git init && git submodule add  https://github.com/arcblock/Forge-java-demo.git ./server/ && git submodule init && git submodule update && yarn install",
+    "post-copy": "yarn install",
     "on-complete": "node scripts/on-complete.js"
   }
 }

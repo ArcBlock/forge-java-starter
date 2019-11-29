@@ -7,8 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
-import Auth from '@arcblock/react-forge/lib/Auth';
-import Avatar from '@arcblock/react-forge/lib/Avatar';
+import Auth from '@arcblock/did-react/lib/Auth';
+import Avatar from '@arcblock/did-react/lib/Avatar';
 
 import Layout from '../components/layout';
 import api from '../libs/api';
@@ -46,24 +46,28 @@ export default function PaymentPage() {
     return null;
   }
 
+  const {
+    payment,
+    session: { user, token },
+  } = state.value;
   return (
     <Layout title="Payment">
-      <Main>
-        <Grid container spacing={40}>
+      <Main symbol={token.symbol}>
+        <Grid container spacing={6}>
           <Grid item xs={12} md={3} className="avatar">
-            <Avatar size={240} did={state.value.session.user.did} />
-            <Button color="secondary" disabled={state.value.payment} variant="contained" onClick={() => toggle()}>
-              {state.value.payment ? 'Already Paid' : 'Make Payment'}
+            <Avatar size={240} did={user.did} />
+            <Button color="secondary" disabled={payment} variant="contained" onClick={() => toggle()}>
+              {payment ? 'Already Paid' : 'Make Payment'}
             </Button>
             <Button color="primary" variant="outlined" href="/profile" style={{ marginTop: '30px' }}>
               My Profile
             </Button>
           </Grid>
-          <Grid item xs={12} md={8} className="meta">
+          <Grid item xs={12} md={9} className="meta">
             <Typography component="h3" variant="h4">
               Secret Document
             </Typography>
-            <div className={`document ${state.value.payment ? 'document--unlocked' : ''}`}>
+            <div className={`document ${payment ? 'document--unlocked' : ''}`}>
               <Typography component="div" variant="body1" className="document__body">
                 What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                 Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
@@ -112,7 +116,7 @@ export default function PaymentPage() {
           onSuccess={() => window.location.reload()}
           messages={{
             title: 'Payment Required',
-            scan: 'Pay 5 TBA to view secret documented',
+            scan: `Pay 2 ${token.symbol} to view secret document`,
             confirm: 'Confirm payment on your ABT Wallet',
             success: 'You have successfully paid!',
           }}
@@ -164,7 +168,7 @@ const Main = styled.main`
       color: #dd2233;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
         'Helvetica Neue', sans-serif;
-      content: 'Pay 5 TBA to view this document';
+      content: 'Pay 2 ${props => props.symbol} to view this document';
       font-size: 30px;
       line-height: 45px;
       border-radius: 15px;

@@ -9,7 +9,6 @@ run-client:
 
 run-server:
 	@echo "starting server..."
-	@git -C ./server pull --rebase
 	@ENV_FILE=.env ./server/gradlew bootRun -p ./server/
 
 

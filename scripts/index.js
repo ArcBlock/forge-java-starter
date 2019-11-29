@@ -148,7 +148,7 @@ SERVER_PORT="${serverPort}"
 FORGE_SOCK_GRPC="${grpcPort}"
 REACT_APP_SERVER_PORT="${serverPort}"
 REACT_APP_SERVER_HOST="http://${ipAddress}:${serverPort}"
-REACT_APP_BASE_URL="http://localhost:${appPort}"`;
+REACT_APP_BASE_URL="http://${ipAddress}:${serverPort}"`;
 
   return {
     envContent,
@@ -159,6 +159,8 @@ REACT_APP_BASE_URL="http://localhost:${appPort}"`;
 const run = async () => {
   const { envContent, proxy } = await getConfigs();
   const targetDir = process.env.FORGE_BLOCKLET_TARGET_DIR;
+  envContent['DB_USER'] = 'postgres';
+  envContent['DB_PW'] = 'postgres';
   fs.writeFileSync(path.join(targetDir, '.env'), envContent);
 
   const packageJSONPath = path.join(targetDir, 'package.json');

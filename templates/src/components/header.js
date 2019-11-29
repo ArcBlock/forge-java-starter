@@ -8,9 +8,8 @@ import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Dialog from '@material-ui/core/Dialog';
-import Auth from '@arcblock/react-forge/lib/Auth';
-import UserAvatar from '@arcblock/react-forge/lib/Avatar';
+import Auth from '@arcblock/did-react/lib/Auth';
+import UserAvatar from '@arcblock/did-react/lib/Avatar';
 
 import useSession from '../hooks/session';
 import api from '../libs/api';
@@ -45,12 +44,18 @@ export default function Header() {
   return (
     <Nav>
       <div className="nav-left">
-        <a href="/">
-          <Typography variant="h6" color="inherit" noWrap className="brand">
-            <img className="logo" src="/static/images/logo.png" alt="arcblock" />
-            {env.appName}
-          </Typography>
-        </a>
+        <Typography href="/" component="a" variant="h6" color="inherit" noWrap className="brand">
+          <img className="logo" src="/static/images/logo.png" alt="arcblock" />
+          {env.appName}
+        </Typography>
+        <Typography
+          component="a"
+          href={env.chainHost.replace('/api', '/node/explorer/txs')}
+          target="_blank"
+          variant="h6"
+          color="inherit">
+          Block Explorer
+        </Typography>
         {session.value && session.value.user && (
           <React.Fragment>
             <Button href="/profile" size="large">
@@ -63,7 +68,7 @@ export default function Header() {
         )}
       </div>
       <div className="nav-right">
-        <Button href="https://github.com/arcblock/forge-python-starter" className="github" target="_blank">
+        <Button href="https://github.com/ArcBlock/forge-dapp-starters" className="github" target="_blank">
           GitHub
         </Button>
         {session.loading && (
@@ -83,20 +88,19 @@ export default function Header() {
         )}
       </div>
       {open && (
-        <Dialog open maxWidth="sm" disableBackdropClick disableEscapeKeyDown onClose={toggle}>
-          <Auth
-            action="login"
-            checkFn={api.get}
-            onClose={() => toggle()}
-            onSuccess={onLogin}
-            messages={{
-              title: 'login',
-              scan: 'Scan QR code with ABT Wallet',
-              confirm: 'Confirm login on your ABT Wallet',
-              success: 'You have successfully signed in!',
-            }}
-          />
-        </Dialog>
+        <Auth
+          responsive
+          action="login"
+          checkFn={api.get}
+          onClose={() => toggle()}
+          onSuccess={onLogin}
+          messages={{
+            title: 'login',
+            scan: 'Scan QR code with ABT Wallet',
+            confirm: 'Confirm login on your ABT Wallet',
+            success: 'You have successfully signed in!',
+          }}
+        />
       )}
     </Nav>
   );

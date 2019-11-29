@@ -11,34 +11,18 @@ import AppPage from './pages/application';
 import BlockPage from './pages/blocks';
 import ChainPage from './pages/chain';
 
-import getPageContext from './libs/context';
+import theme from './libs/theme';
 
 const GlobalStyle = createGlobalStyle`
   a {
     color: ${props => props.theme.colors.green};
     text-decoration: none;
   }
-
-  pre,code {
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
-      Courier New, monospace, serif;
-  }
-
-  pre {
-    margin-bottom: 10px;
-    border-radius: 10px;
-    line-height: 1.5rem;
-    padding: 25px;
-    color: #ffffff;
-    background-color: #222222;
-  }
 `;
 
-const pageContext = getPageContext();
-
 export const App = () => (
-  <MuiThemeProvider theme={pageContext.theme} sheetsManager={pageContext.sheetsManager}>
-    <ThemeProvider theme={pageContext.theme}>
+  <MuiThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
       <React.Fragment>
         <CssBaseline />
         <GlobalStyle />

@@ -2,7 +2,7 @@
   "name": "forge-java-starter",
   "version": "0.0.1",
   "main": "starter.config.js",
-  "author": "wangshijun <shijun@arcblock.io> https://github.com/wangshijun",
+  "author": "shan <shan@arcblock.io> https://github.com/PaperHS",
   "keywords": [
     "arcblock",
     "forge",
@@ -17,12 +17,12 @@
     "url": "git+https://github.com/arcblock/forge-java-starter"
   },
   "bugs": {
-    "email": "shijun@arcblock.io"
+    "email": "shan@arcblock.io"
   },
   "dependencies": {
-    "@arcblock/forge-wallet": "^0.35.2",
-    "@arcblock/graphql-client": "^0.37.2",
-    "@arcblock/mcrypto": "^0.35.1",
+    "@arcblock/forge-wallet": "^1.0.4",
+    "@arcblock/graphql-client": "^1.0.7",
+    "@arcblock/mcrypto": "^1.0.4",
     "chalk": "^2.4.2",
     "child_process": "^1.0.2",
     "inquirer": "^7.0.0",

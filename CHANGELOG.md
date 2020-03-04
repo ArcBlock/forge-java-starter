@@ -1,3 +1,7 @@
+## 0.2.3 (March 04, 2020)
+
+- update blocklet.md
+
 ## 0.2.2 (March 04, 2020)
 
 - upgrade forge js sdk

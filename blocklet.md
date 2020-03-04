@@ -21,6 +21,7 @@ consists of 2 core parts:
 - Java 8+
 - A running Blockchain node using [Forge-cli](https://docs.arcblock.io/forge/latest/tools/forge_cli.html)
 - npm or yarn
+- PostgreSQL 9+
 
 ### Frontend Part
 
@@ -33,7 +34,7 @@ Built upon the application skeleton we got after running `create-react-app`, dAp
 
 ### Backend part
 
-Besides, to make the dApp works along with the [ABT Wallet](https://abtwallet.io), some APIs are required, a minimal API server built upon [Flask](https://palletsprojects.com/p/flask/) is also included.
+Besides, to make the dApp works along with the [ABT Wallet](https://abtwallet.io), some APIs are required, a minimal API server built upon [Spring](https://spring.io/) is also included.
 
 ## Use cases?
 

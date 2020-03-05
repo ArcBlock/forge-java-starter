@@ -1,25 +1,25 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React from "react";
-import styled from "styled-components";
-import useAsyncFn from "react-use/lib/useAsyncFn";
-import useToggle from "react-use/lib/useToggle";
-import { fromUnitToToken } from "@arcblock/forge-util";
+import React from 'react';
+import styled from 'styled-components';
+import useAsyncFn from 'react-use/lib/useAsyncFn';
+import useToggle from 'react-use/lib/useToggle';
+import { fromUnitToToken } from '@arcblock/forge-util';
 
-import Grid from "@material-ui/core/Grid";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import Auth from "@arcblock/did-react/lib/Auth";
-import Avatar from "@arcblock/did-react/lib/Avatar";
+import Grid from '@material-ui/core/Grid';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Auth from '@arcblock/did-react/lib/Auth';
+import Avatar from '@arcblock/did-react/lib/Avatar';
 
-import Layout from "../components/layout";
-import useSession from "../hooks/session";
-import forge from "../libs/sdk";
-import api from "../libs/api";
-import { removeToken, onAuthError } from "../libs/auth";
+import Layout from '../components/layout';
+import useSession from '../hooks/session';
+import forge from '../libs/sdk';
+import api from '../libs/api';
+import { removeToken, onAuthError } from '../libs/auth';
 
 export default function ProfilePage() {
   const session = useSession();
@@ -46,7 +46,7 @@ export default function ProfilePage() {
 
   const onLogout = () => {
     removeToken();
-    window.location.href = "/";
+    window.location.href = '/';
   };
 
   if (session.loading || !session.value) {
@@ -68,7 +68,7 @@ export default function ProfilePage() {
   }
 
   if (!session.value.user) {
-    window.location.href = "/?openLogin=true";
+    window.location.href = '/?openLogin=true';
     return null;
   }
 
@@ -90,21 +90,11 @@ export default function ProfilePage() {
             <Button color="secondary" variant="outlined" onClick={onLogout}>
               Logout
             </Button>
-            <Button
-              color="primary"
-              variant="outlined"
-              href="/payment"
-              style={{ marginTop: "30px" }}
-            >
+            <Button color="primary" variant="outlined" href="/payment" style={{ marginTop: '30px' }}>
               My Purchase
             </Button>
             {balance.value && (
-              <Button
-                color="primary"
-                variant="contained"
-                onClick={() => setOpen()}
-                style={{ marginTop: "30px" }}
-              >
+              <Button color="primary" variant="contained" onClick={() => setOpen()} style={{ marginTop: '30px' }}>
                 Get 25 {token.symbol}
               </Button>
             )}
@@ -118,22 +108,19 @@ export default function ProfilePage() {
                 <ListItemText primary={user.did} secondary="DID" />
               </ListItem>
               <ListItem className="meta-item">
-                <ListItemText primary={user.name || "-"} secondary="Name" />
+                <ListItemText primary={user.name || '-'} secondary="Name" />
               </ListItem>
               <ListItem className="meta-item">
-                <ListItemText primary={user.email || "-"} secondary="Email" />
+                <ListItemText primary={user.email || '-'} secondary="Email" />
               </ListItem>
               <ListItem className="meta-item">
-                <ListItemText primary={user.mobile || "-"} secondary="Phone" />
+                <ListItemText primary={user.mobile || '-'} secondary="Phone" />
               </ListItem>
               <ListItem className="meta-item">
                 <ListItemText
                   primary={
                     balance.value ? (
-                      `${fromUnitToToken(
-                        balance.value.balance,
-                        token.decimal
-                      )} ${token.symbol}`
+                      `${fromUnitToToken(balance.value.balance, token.decimal)} ${token.symbol}`
                     ) : (
                       <CircularProgress size={18} />
                     )
@@ -156,8 +143,8 @@ export default function ProfilePage() {
           messages={{
             title: `Get 25 ${token.symbol} for FREE`,
             scan: `Scan qrcode to get 25 ${token.symbol} for FREE`,
-            confirm: "Confirm on your ABT Wallet",
-            success: `25 ${token.symbol} sent to your account`
+            confirm: 'Confirm on your ABT Wallet',
+            success: `25 ${token.symbol} sent to your account`,
           }}
         />
       )}

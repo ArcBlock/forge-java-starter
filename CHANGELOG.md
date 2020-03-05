@@ -1,3 +1,7 @@
+## 0.2.4 (March 05, 2020)
+
+- fix user balance
+
 ## 0.2.3 (March 04, 2020)
 
 - update blocklet.md

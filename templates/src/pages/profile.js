@@ -27,9 +27,18 @@ export default function ProfilePage() {
   const [isOpen, setOpen] = useToggle(false);
   const [balance, fetchBalance] = useAsyncFn(async () => {
     if (session.value && session.value.user) {
-      const address = session.value.user.did.replace(/^did:abt:/, '');
-      const { state: account } = await forge.getAccountState({ address }, { ignoreFields: [] });
-      return account;
+      const address = session.value.user.did.replace(/^did:abt:/, "");
+      const {
+        getAccountState: { state: balance }
+      } = await forge.doRawQuery(`{
+        getAccountState(address:"${address}") {
+          code
+          state {
+            balance
+          }
+        }
+      }`);
+      return balance;
     }
 
     return null;

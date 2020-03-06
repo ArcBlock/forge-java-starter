@@ -1,6 +1,6 @@
 {
   "name": "forge-java-starter",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "main": "starter.config.js",
   "author": "shan <shan@arcblock.io> https://github.com/PaperHS",
   "keywords": [

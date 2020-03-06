@@ -1,3 +1,7 @@
+## 0.2.5 (March 06, 2020)
+
+- bump version
+
 ## 0.2.4 (March 05, 2020)
 
 - fix user balance

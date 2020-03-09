@@ -8,11 +8,16 @@ branches:
   - master
 script: make travis
 deploy:
-- provider: script
-  skip_cleanup: true
-  script: bash ./tools/publish.sh
-  on:
-    branch: master
+  - provider: script
+    skip_cleanup: true
+    script: bash ./tools/publish.sh
+    on:
+      branch: master
+  - provider: script
+    skip_cleanup: true
+    script: make release
+    on:
+      branch: master
 env:
   global:
     secure: ux7NR21I2LgyuW7bY74Wr21riSC5R9qsrQ+eV0vSNq19geZC7KCiUJnN0fd0n0XuJk3m5d4K/T7FHjIrUmtc1UuCviwQSmXWAylO2rl4aehsduKO0AkYn/EvFySbp1tfg3uvKRNGoJ6JL4RC1Bf3LNanRzJ9SHXFGnB4dXNxIubzxhyRwp1tzuzcpYjw5iahWyR6FQxXJYcqxW6QLOILYGbEaujCQi/u9Ee9qWOUdH8LkOsBehN+2IIkfqmAvEme4f1uqPoKqQ4tbKLJSyyjR/Onv9ZA/zvtPFIv21bv3D9+mdEfT/ODnlk8sja9dW5PmsyZ6pd60phqFO6tiedh0IfQRp1mFgcZ26Og0G3Aw2qFQF/vuwmmnJZ4YZm9rtVufF1kJC1vYVe5hMroX/fxgEKQdKeC1cq2YLCvbXN+/F8nPbguFehD+GTmgQTr3EXJBFiBBvnBwRlV8Cw5G1WHPprpaOnjjcfwn42qmIxg7/6Z6Eip9FjUFDkTC4a00lpSX+OXRDgaTx4kcznJHn6PlDiYDWe+kf4l8rrNLWvqssmuq7V8zruv0aKgTIpcM1HVyyIpWt3euftwHNUfBZVytNhIxnydJC0hV3Dzh78JSZet6PsETfQhvtM8ilmTsxmcprwM7pxfJGxZXu40h8NzkyJo9iyaVHifhz7GtjzCr1A=

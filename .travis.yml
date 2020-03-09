@@ -2,7 +2,8 @@ sudo: false
 language: node_js
 node_js:
 - '12'
-install: skip
+install:
+  - npm install
 branches:
   only:
   - master

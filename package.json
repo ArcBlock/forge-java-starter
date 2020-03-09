@@ -39,6 +39,6 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@hutson/set-npm-auth-token-for-ci": "^4.0.3"
+    "@hutson/set-npm-auth-token-for-ci": "^5.0.0"
   }
 }

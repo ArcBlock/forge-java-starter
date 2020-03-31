@@ -1,3 +1,7 @@
+## 0.2.7 (March 31, 2020)
+
+- fix git submodule add bug
+
 ## 0.2.6 (March 09, 2020)
 
 - Throw error when unhandledRejection event occurs in nodejs scripts

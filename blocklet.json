@@ -18,7 +18,7 @@
   ],
   "templates": "templates",
   "install-scripts": {
-    "install-dependencies": "git init && git submodule add --force https://github.com/arcblock/Forge-java-demo.git ./templates/server && git submodule update --remote ./templates/server/ && yarn install"
+    "install-dependencies": "git init && if [ ! -d ./templates/server ]; then git submodule add --force https://github.com/arcblock/Forge-java-demo.git ./templates/server; fi && git submodule update --remote ./templates/server/ && yarn install"
   },
   "hooks": {
     "configure": "node scripts/index.js",
